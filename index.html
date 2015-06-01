@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slider test</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenLite.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/utils/Draggable.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/plugins/CSSPlugin.min.js"></script>
+<script src="ThrowPropsPlugin.min.js"></script>
+
+<script src="jquery.gsap-slider.js"></script>
+
+<style type="text/css">
+body {
+	color:	#444;
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.33;
+}
+
+.slider-track {
+	width:	80%;
+	background: #eee;
+	height:     40px;
+	position:   relative;
+
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+}
+.slider-handle {
+	width: 		40px;
+	height:		40px;
+	position:   absolute;
+
+	background: #f60;
+
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+cursor: pointer;
+}
+.slider-marker {
+	position: 	absolute;
+	width:		1px;
+	background: #fff;
+	height:	    40px;
+	transform:  translate(20px, 0);
+}
+.slider-marker span {
+	position:   absolute;
+	font-size:  10px;
+	color:	    #f60;
+	transform:  translate(-10px, 42px);
+}
+.slider-marker-1850 {
+	display:	none;
+}
+.slider-marker-2015 {
+	display:	none;
+}
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+	<div id="slider">
+		<div data-slider="track" class="slider-track">
+			<div class="slider-handle" data-slider="handle"></div>
+		</div>
+
+		<div data-slider-content="1850">
+			<h1>1850</h1>
+			<p>January 18 – British foreign secretary Henry John Temple, 3rd Viscount Palmerston, sends ships to blockade the port of Piraeus, ostensibly as a result of the Don Pacifico affair.</p>
+		</div>
+
+		<div data-slider-content="1897">
+			<h1>1897</h1>
+			<p>
+January 2 – The International Alpha Omicron Pi sorority is founded.
+January 4 – A British force is ambushed by Chief Ologbosere, son-in-law of the Oba of Benin. This leads to a punitive expedition against Benin.
+			</p>
+		</div>
+
+		<div data-slider-content="1950">
+			<h1>1950</h1>
+			<p>
+1950 (MCML) was a common year starting on Sunday of the Gregorian calendar (dominical letter A), the 1950th year of the Common Era (CE) and Anno Domini (AD) designations, the 950th year of the 2nd millennium, the 50th year of the 20th century, and the 1st year of the 1950s decade. It is also the index year, or year 0, that scientists use for Before Present figures.
+			</p>
+		</div>
+
+		<div data-slider-content="1975">
+			<h1>1975</h1>
+			<p>
+1975 (MCMLXXV) was a common year starting on Wednesday of the Gregorian calendar (dominical letter E), the 1975th year of the Common Era (CE) and Anno Domini (AD) designations, the 975th year of the 2nd millennium, the 75th year of the 20th century, and the 6th year of the 1970s decade. It was also declared the International Women's Year by the United Nations and the European Architectural Heritage Year by the Council of Europe.
+			</p>
+		</div>
+
+		<div data-slider-content="1990">
+			<h1>1990</h1>
+			<p>Important events of 1990 include the Reunification of Germany and Yemeni unification,[1] the formal beginning of the Human Genome Project (finished in 2003), the launch of the Hubble Space Telescope, the separation of Namibia from South Africa, and the Baltic states declaring independence from the Soviet Union amidst Perestroika. 
+			</p>
+		</div>
+
+		<div data-slider-content="2015">
+			<h1>2015</h1>
+			<p>
+2015 (MMXV) is the current year, and is a common year starting on Thursday of the Gregorian calendar (dominical letter D), the 2015th year of the Common Era (CE) and Anno Domini (AD) designations, the 15th year of the 3rd millennium, the 15th year of the 21st century, and the 6th year of the 2010s decade.
+2015 has been designated the International Year of Light and the International Year of Soils by the sixty-eighth session of the United Nations General Assembly.[1]
+			</p>
+		</div>
+
+
+	</div>
+
+
+<script>
+
+
+
+
+$(function() {
+
+	$('#slider').gsapSlider({
+
+		snap      : [1850, 1897, 1950, 1975, 1990, 2015],
+		addMarker : function($marker, value) {
+			$marker.append('<span>' + value + '</span>');
+		}
+	
+	});
+})
+
+</script>
+
+</body>
+
+</html>
